@@ -30,3 +30,6 @@ int main(){
     cout<<"Index is "<<ans<<endl;
 }
 
+//stl notes
+//lower bound:  int index = lower_bound(arr.begin(), arr.end(), x) - arr.begin();
+//upper bound:  int index = upper_bound(arr.begin(), arr.end(), x) - arr.begin();
