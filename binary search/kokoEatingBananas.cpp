@@ -36,7 +36,7 @@ int main(){
     return 0;
 }
 
-
+//brute
 /*int main(){
     int h,n;
     cout<<"Enter the size of array";
