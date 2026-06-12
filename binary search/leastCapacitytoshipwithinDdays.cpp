@@ -1,3 +1,4 @@
+//The word is least/minimum so we have to do binary search on answers
 #include<iostream>
 #include<vector>
 #include<algorithm>
@@ -43,7 +44,8 @@ int main(){
         else
         low=mid+1;
     }
-    cout<<"Capacity of ship="<<ans<<endl;
+    cout<<"Capacity of ship="<<ans<<endl;//ans will be equal to low so we can return low directly instead of answers... 
+    //low starts on not possible end and high is on possible values end so low ends up on minimum possible value and high on maximum not possible value
     return 0;
 }
 //BRUTE
