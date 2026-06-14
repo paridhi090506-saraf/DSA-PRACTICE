@@ -30,3 +30,40 @@ int main() {
     }
     cout<<"not found"<<endl;
 }
+
+//brute
+/*
+for(int i=0;i<n;i++){
+for(int j=0;j<m;j++){
+if(arr[i][j]==target){
+cout<<"Found"<<endl;
+return 0;
+}
+}
+}
+cout<<"Not found"<<endl;
+return 0;
+*/
+
+//better
+/*
+for(int i=0;i<n;i++){
+if(arr[i][0]<=target && target<=arr[i][m-1]){
+int low=0,high=m-1;
+while(low<=high){
+int mid=low+(high-low)/2;
+if(arr[i][mid]==target){
+cout<<"Found"<<endl;
+return 0;
+}
+else if(arr[i][mid]<target){
+low=mid+1;
+}
+else
+high=mid-1;
+}
+}
+}
+cout<<"Not found"<<endl;
+return 0;
+*/
