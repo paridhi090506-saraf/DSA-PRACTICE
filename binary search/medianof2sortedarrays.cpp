@@ -1,4 +1,55 @@
-#include<iostream>
+#include <iostream>
+#include <vector>
+#include <climits>
+using namespace std;
+double findMedianSortedArrays(vector<int>& arr1, vector<int>& arr2) {
+    int n1 = arr1.size();
+    int n2 = arr2.size();
+    if (n1 > n2)
+        return findMedianSortedArrays(arr2, arr1);
+    int low = 0, high = n1;
+    int left = (n1 + n2 + 1) / 2;
+    while (low <= high) {
+        int mid1 = low + (high - low) / 2;
+        int mid2 = left - mid1;
+        int l1 = (mid1 > 0) ? arr1[mid1 - 1] : INT_MIN;
+        int l2 = (mid2 > 0) ? arr2[mid2 - 1] : INT_MIN;
+        int r1 = (mid1 < n1) ? arr1[mid1] : INT_MAX;
+        int r2 = (mid2 < n2) ? arr2[mid2] : INT_MAX;
+        if (l1 <= r2 && l2 <= r1) {
+            // Correct partition found
+            if ((n1 + n2) % 2 == 1)
+                return max(l1, l2);
+            return (max(l1, l2) + min(r1, r2)) / 2.0;
+        }
+        else if (l1 > r2) {
+            high = mid1 - 1;
+        }
+        else {
+            low = mid1 + 1;
+        }
+    }
+    return 0.0; // Should never reach here
+}
+int main() {
+    int n, m;
+    cout << "Enter size of first array: ";
+    cin >> n;
+    cout << "Enter size of second array: ";
+    cin >> m;
+    vector<int> arr1(n), arr2(m);
+    cout << "Enter elements of first sorted array:\n";
+    for (int i = 0; i < n; i++)
+        cin >> arr1[i];
+    cout << "Enter elements of second sorted array:\n";
+    for (int i = 0; i < m; i++)
+        cin >> arr2[i];
+    cout << "Median = " << findMedianSortedArrays(arr1, arr2);
+    return 0;
+}
+
+
+/*#include<iostream>
 #include<vector>
 using namespace std;
 int main(){
@@ -54,7 +105,7 @@ int main(){
         return 0;
     }
     cout<<"Median of 2 sorted arrays="<<el2<<endl;
-}
+}*/
 
 /*#include<iostream>
 #include<vector>
