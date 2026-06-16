@@ -21,6 +21,10 @@ int main(){
     int x;
     cout<<"Enter threshold value";
     cin>>x;
+    if(x < n){
+        cout << "No valid divisor exists";
+        return 0;
+    }
     int ans=0;
     int low=1;
     int high=*max_element(arr.begin(),arr.end());
