@@ -66,3 +66,6 @@ int main(){
     }
     cout<<endl;
 }
+
+//TC-O(3N)
+//SC-O(4N)
