@@ -28,3 +28,7 @@ int main(){
     cout << root->left->right->data << endl;     
     return 0; 
 }
+
+
+//to construct a unique binary tree we need either inorder and postorder or inorder and preorder
+//with only postorder and preorder given, we can construct binary tree but not unique binary tree
