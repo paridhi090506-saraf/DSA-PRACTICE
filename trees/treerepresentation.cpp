@@ -31,4 +31,4 @@ int main(){
 
 
 //to construct a unique binary tree we need either inorder and postorder or inorder and preorder
-//with only postorder and preorder given, we can construct binary tree but not unique binary tree
+//with only postorder and preorder given, we can construct binary tree but not unique binary tre
