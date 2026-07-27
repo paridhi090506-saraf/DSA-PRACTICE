@@ -36,3 +36,22 @@ int main(){
     Node* root=bstFromPreorder(preorder);
     inorder(root);
 }
+
+/* sort preorder so,will get inorder and then unique tree from inorder and preorder code */
+
+/*
+Node* insert(Node* root, int val){
+    if(root==NULL)
+        return new Node(val);
+    if(val < root->data)
+        root->left = insert(root->left, val);
+    else
+        root->right = insert(root->right, val);
+    return root;
+}
+Node* bstFromPreorder(vector<int>& preorder){
+    Node* root = NULL;
+    for(int x : preorder)
+        root = insert(root, x);
+    return root;
+}*/
