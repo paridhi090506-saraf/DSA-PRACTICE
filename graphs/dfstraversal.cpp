@@ -24,7 +24,7 @@ int main(){
     }
     int vis[n+1]={0};
     vector<int> ls;
-    int start=0;
+    int start=1;
     dfstrav(start,ls,adj,vis);
     cout << "DFS Traversal: ";
     for (int x : ls)
