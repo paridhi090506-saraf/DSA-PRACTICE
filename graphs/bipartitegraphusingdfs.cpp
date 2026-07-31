@@ -17,7 +17,7 @@ bool isBipartite(int n,vector<vector<int>> &adj){
     int color[n+1];
     for(int i=0;i<n+1;i++)
     color[i]=-1;
-    for(int i=0;i<n+1;i++){
+    for(int i=1;i<n+1;i++){
         if(color[i]==-1){
             if(check(i,adj,color,0)==false){
                 return false;
@@ -28,8 +28,8 @@ bool isBipartite(int n,vector<vector<int>> &adj){
 }
 int main(){
     int n,m;
-    vector<vector<int>> adj(n+1);
     cin>>n>>m;
+    vector<vector<int>> adj(n+1);
     for(int i=0;i<m;i++){
         int u,v;
         cin>>u>>v;
